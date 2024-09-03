@@ -89,6 +89,8 @@ G6 中的状态类型是一个字符串数组(string[])，即一个元素可以*
 可以在`data`中预设 node 的状态。  
 可以在**样式映射**中配置状态有哪些样式。
 
+--- 
+
 ### 无法使用树图布局
 
 v5合并了图和树图，但是无法使用树图布局。
@@ -96,3 +98,4 @@ v5合并了图和树图，但是无法使用树图布局。
 在layout下的 type 类型声明中也没有树图相关的值。
 
 ![layout-type.png](./public/assets/layout-type.png)
+![gforce-layout-not-register.png](./public/assets/layout-not-register.png)

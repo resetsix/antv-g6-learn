@@ -45,6 +45,7 @@ export const Demo04: React.FC = () => {
         layout: {
           // type: circular random grid mds concentric radial fruchterman fruchtermanGPU d3-force d3-force3d force gforce forceAtlas2 antv-dagre dagre
           type: "indented",
+          enableWorker: true,
         },
         // autoFit: "center",
         // background: "#E8D6E8",
@@ -68,7 +69,7 @@ export const Demo04: React.FC = () => {
   const handleButtonSelectedClear = () => {
     graphRef.current?.setElementState("node-1", []);
   };
-  const handleLayout = () => {
+  const handleLayout = async () => {
     const layoutAlgorithms = [
       "circular",
       "random",
@@ -97,12 +98,12 @@ export const Demo04: React.FC = () => {
       });
 
       // 触发布局
-      graphRef.current.layout();
+      await graphRef.current.layout();
 
       // 在布局完成后更新视图
-      graphRef.current.once("afterlayout", () => {
-        graphRef.current?.fitView();
-      });
+      // graphRef.current.once("afterlayout", () => {
+      //   graphRef.current?.fitView();
+      // });
     }
   };
 
@@ -113,8 +114,8 @@ export const Demo04: React.FC = () => {
       <button onClick={handleButtonSelectedClear}>
         清除 node-1 为选中状态
       </button>
-      <button onClick={handleLayout}>设置布局</button>
-      <div ref={containerRef} style={{ width: "99vw", height: 800 }} />
+      <button onClick={handleLayout}>随机布局(console查看布局名称)</button>
+      <div ref={containerRef} style={{ width: "99vw", height: "90vh" }} />
     </>
   );
 };
