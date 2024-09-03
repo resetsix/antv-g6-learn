@@ -9,7 +9,7 @@ antv/g6 v5.0.19
 
 在项目启动编译时提示 warning 信息，不影响项目正常运行
 
-![source-mapping-error.png](./src/assets/source-mapping-error.png)
+![source-mapping-error.png](./public/assets/source-mapping-error.png)
 
 **解决方案**：**关闭**构建工具生成源码映射文件开关  
 
@@ -41,10 +41,10 @@ const graph = new Graph({
     node: {
       palette: {
         field: "color",
-        // good
+        // right
         color: ["red", "green", "blue"],
 
-        // bad
+        // error
         // color: 'red'
       },
     },
@@ -62,11 +62,11 @@ const graph = new Graph({
 }
 ```
 
-![grid-line-not-take-effect.png](./src/assets/grid-line-not-take-effect.png)
+![grid-line-not-take-effect.png](./public/assets/grid-line-not-take-effect.png)
 
 增加以上配置仅仅只增加上图中的横线。预期应该如下
 
-![grid-line-not-take-effect.png](./src/assets/grid-line-effect.png)
+![grid-line-not-take-effect.png](./public/assets/grid-line-effect.png)
 
 初步判断是使用`autoResize: true`而没有指定`height`影响，但关闭自动画布且配置`height`仍没有效果。
 
@@ -88,3 +88,11 @@ G6 中的状态类型是一个字符串数组(string[])，即一个元素可以*
 
 可以在`data`中预设 node 的状态。  
 可以在**样式映射**中配置状态有哪些样式。
+
+### 无法使用树图布局
+
+v5合并了图和树图，但是无法使用树图布局。
+
+在layout下的 type 类型声明中也没有树图相关的值。
+
+![layout-type.png](./public/assets/layout-type.png)
