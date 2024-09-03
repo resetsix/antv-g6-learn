@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/antv-g6-learn/static/css/main.4b5be791.css",
-    "main.js": "/antv-g6-learn/static/js/main.3af4bcba.js",
+    "main.js": "/antv-g6-learn/static/js/main.af5742ea.js",
     "static/js/873.251267c0.chunk.js": "/antv-g6-learn/static/js/873.251267c0.chunk.js",
     "static/js/206.635e821d.chunk.js": "/antv-g6-learn/static/js/206.635e821d.chunk.js",
     "index.html": "/antv-g6-learn/index.html"
   },
   "entrypoints": [
     "static/css/main.4b5be791.css",
-    "static/js/main.3af4bcba.js"
+    "static/js/main.af5742ea.js"
   ]
 }
