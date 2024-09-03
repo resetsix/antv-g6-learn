@@ -10,7 +10,7 @@ const data = {
   edges: [{ id: "edge-1", source: "node-1", target: "node-2" }],
 };
 
-export const BaseGraph: React.FC = () => {
+export const Demo01: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const graphRef = useRef<Graph | null>(null);
 
@@ -32,7 +32,7 @@ export const BaseGraph: React.FC = () => {
 
   return (
     <>
-      <h2>Graph简单示例</h2>
+      <h2>Graph简单示例01</h2>
       <div ref={containerRef} />
     </>
   );

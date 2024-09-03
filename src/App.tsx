@@ -1,8 +1,14 @@
 import "./App.css";
-import { BaseGraph } from "./examples/BaseGraph";
+import { Demo01 } from "./examples/Demo01";
+import { Demo02 } from "./examples/Demo02";
 
 const App = () => {
-  return <BaseGraph />;
+  return (
+    <>
+      {/* <Demo01 /> */}
+      <Demo02 />
+    </>
+  );
 };
 
 export default App;
