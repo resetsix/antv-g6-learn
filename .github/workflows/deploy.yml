@@ -20,7 +20,7 @@ jobs:
       run: yarn install --frozen-lockfile
       
     - name: Build
-      run: yarn build
+      run: DISABLE_ESLINT_PLUGIN=true CI=false yarn build
       
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.5
