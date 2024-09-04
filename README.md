@@ -169,7 +169,6 @@ const graph = new Graph({
     {
       type: "tooltip",
       key: "tooltip",
-      // trigger: "click",
       enable: (event: IElementEvent) => {
         return event.targetType === "node" || event.targetType === "edge";
       },
@@ -178,8 +177,11 @@ const graph = new Graph({
 });
 ```
 
-### 三次贝塞尔曲线-水平（edge）没有连接在 node 的边缘中心
+**解决方案**：官方已修复[#6270](https://github.com/antvis/G6/pull/6270)
 
+---
+
+### 三次贝塞尔曲线-水平（edge）没有连接在 node 的边缘中心
 
 <details>
 <summary>点击展开/关闭</summary>
