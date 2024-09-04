@@ -9,7 +9,15 @@ antv/g6 v5.0.19
 
 在项目启动编译时提示 warning 信息，不影响项目正常运行
 
+
+<details>
+<summary>点击展开/关闭</summary>
+
 ![source-mapping-error.png](./public/assets/source-mapping-error.png)
+
+</details>  
+
+<br/>
 
 **解决方案**：**关闭**构建工具生成源码映射文件开关  
 
@@ -61,16 +69,33 @@ const graph = new Graph({
   plugins: ['grid-line'],
 }
 ```
+<br/>
+
+<details>
+<summary>点击展开/关闭</summary>
 
 ![grid-line-not-take-effect.png](./public/assets/grid-line-not-take-effect.png)
 
+</details>
+
+<br/>
+
 增加以上配置仅仅只增加上图中的横线。预期应该如下
+
+
+<details>
+<summary>点击展开/关闭</summary>
 
 ![grid-line-not-take-effect.png](./public/assets/grid-line-effect.png)
 
+</details>
+
+<br/>
+
+
 初步判断是使用`autoResize: true`而没有指定`height`影响，但关闭自动画布且配置`height`仍没有效果。
 
-实际原因：容器 <div ref={containerRef} /> 本身没有设置高度，Graph 可能无法正确计算出合适的大小。如果要启用grid-line画布插件，需要给父元素 div 设置宽高，在graph 配置中是无效的。
+实际原因：容器`<div ref={containerRef} />`本身没有设置高度，Graph 可能无法正确计算出合适的大小。如果要启用grid-line画布插件，需要给父元素 div 设置宽高，在graph 配置中是无效的。
 
 **解决方案**：给**父容器**设置宽高
 
@@ -97,8 +122,17 @@ v5合并了图和树图，但是无法使用树图布局。
 
 在layout下的 type 类型声明中也没有树图相关的值。
 
+<details>
+<summary>点击展开/关闭</summary>
+
 ![layout-type.png](./public/assets/layout-type.png)
+
 ![gforce-layout-not-register.png](./public/assets/layout-not-register.png)
+
+</details>
+
+<br/>
+
 
 **解决方案**：从源码跳转到的 Layout TS 类型声明布局名不准确（官方解释说只是用来做内部识别用的），所有内置布局参考 https://github.com/antvis/G6/blob/b49ce81fc1e7ca28d038786b026a4827eccff14f/packages/g6/src/registry/build-in.ts#L188
 
@@ -121,6 +155,68 @@ plugin: {
     tooltip: Tooltip,
     watermark: Watermark,
 },
+```
+---
+
+### tooltip插件启用 enable 后自动移除失效
+
+假设需求：hover或click时只让node有提示，edge没有提示。
+
+```tsx
+const graph = new Graph({
+  container: xxx,
+  plugins: [
+    {
+      type: "tooltip",
+      key: "tooltip",
+      // trigger: "click",
+      enable: (event: IElementEvent) => {
+        return event.targetType === "node" || event.targetType === "edge";
+      },
+    },
+  ],
+});
+```
+
+### 三次贝塞尔曲线-水平（edge）没有连接在 node 的边缘中心
+
+
+<details>
+<summary>点击展开/关闭</summary>
+
+![edge-not-in-center.png](./public/assets/edge-not-in-center.png)
+
+</details>  
+
+<br/>
+
+修复后效果
+
+<details>
+<summary>点击展开/关闭</summary>
+
+![edge-in-center.png](./public/assets/edge-in-center.png)
+
+</details>
+
+<br/>
+
+**解决方案**：在 node 的**样式对象**中添加如下配置
+
+```tsx
+const graph = new Graph({
+  container: containerRef.current!,
+  node: {
+    // ...other
+    style: {
+
+      // add these two config 
+      port: true,
+      ports: [{ placement: "right" }, { placement: "left" }],
+    },
+  },
+  ],
+})
 ```
 
 ## 参考
