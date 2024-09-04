@@ -1,6 +1,8 @@
 import { Graph, type GraphData } from "@antv/g6";
 import type React from "react";
 import { useRef, useEffect } from "react";
+import { layoutAlgorithms } from "../layoutAlgorithms";
+import { getRandomIndex } from "../utils/getRandomIndex";
 
 const data: GraphData = {
   nodes: Array.from({ length: 10 }).map((_, i) => ({
@@ -70,25 +72,8 @@ export const Demo04: React.FC = () => {
     graphRef.current?.setElementState("node-1", []);
   };
   const handleLayout = async () => {
-    const layoutAlgorithms = [
-      "circular",
-      "random",
-      "grid",
-      "mds",
-      "concentric",
-      "radial",
-      "fruchterman",
-      "fruchtermanGPU",
-      "d3-force",
-      "d3-force3d",
-      "force",
-      "gforce",
-      "forceAtlas2",
-      "antv-dagre",
-      "dagre",
-    ];
     // 随机选择一个布局
-    const randomIndex = Math.floor(Math.random() * layoutAlgorithms.length);
+    const randomIndex = getRandomIndex(layoutAlgorithms.length);
     const randomLayout = layoutAlgorithms[randomIndex];
     console.log("布局类型：", graphRef.current?.getLayout());
     // 设置选中的随机布局
@@ -97,13 +82,8 @@ export const Demo04: React.FC = () => {
         type: randomLayout,
       });
 
-      // 触发布局
+      // 执行布局
       await graphRef.current.layout();
-
-      // 在布局完成后更新视图
-      // graphRef.current.once("afterlayout", () => {
-      //   graphRef.current?.fitView();
-      // });
     }
   };
 

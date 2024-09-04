@@ -1,4 +1,4 @@
-## a repository to learn antv/g6 
+## a repository to learn antv/g6 demo
 
 antv/g6 v5.0.19
 
@@ -99,3 +99,31 @@ v5合并了图和树图，但是无法使用树图布局。
 
 ![layout-type.png](./public/assets/layout-type.png)
 ![gforce-layout-not-register.png](./public/assets/layout-not-register.png)
+
+**解决方案**：从源码跳转到的 Layout TS 类型声明布局名不准确（官方解释说只是用来做内部识别用的），所有内置布局参考 https://github.com/antvis/G6/blob/b49ce81fc1e7ca28d038786b026a4827eccff14f/packages/g6/src/registry/build-in.ts#L188
+
+```
+plugin: {
+    'bubble-sets': BubbleSets,
+    'edge-filter-lens': EdgeFilterLens,
+    'grid-line': GridLine,
+    background: Background,
+    contextmenu: Contextmenu,
+    fisheye: Fisheye,
+    fullscreen: Fullscreen,
+    history: History,
+    hull: Hull,
+    legend: Legend,
+    minimap: Minimap,
+    snapline: Snapline,
+    timebar: Timebar,
+    toolbar: Toolbar,
+    tooltip: Tooltip,
+    watermark: Watermark,
+},
+```
+
+## 参考
+- [Antv-G6学习笔记-v4](https://github.com/puxiao/notes/blob/master/Antv-G6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)  
+- [Antv官网-v5](https://g6-next.antv.antgroup.com/)
+- [Antv源码-build-in](https://github.com/antvis/G6/blob/v5/packages/g6/src/registry/build-in.ts)
