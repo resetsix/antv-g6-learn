@@ -94,7 +94,7 @@ export const Demo04: React.FC = () => {
       <button onClick={handleButtonSelectedClear}>
         清除 node-1 为选中状态
       </button>
-      <button onClick={handleLayout}>随机布局(console查看布局名称)</button>
+      <button onClick={handleLayout}>随机布局</button>
       <div ref={containerRef} style={{ width: "99vw", height: "90vh" }} />
     </>
   );

@@ -156,7 +156,7 @@ export const Demo05: React.FC = () => {
         <button onClick={handleRandomSelectedClear}>
           清除 node-1 为选中状态
         </button>
-        <button onClick={handleLayout}>随机布局(console查看布局名称)</button>
+        <button onClick={handleLayout}>随机布局</button>
         <button onClick={handleFocus}>定位</button>
         <button onClick={handleCenter}>居中</button>
         <button onClick={handleView}>适配窗口</button>
