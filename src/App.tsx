@@ -9,6 +9,7 @@ import { Demo06 } from "./examples/Demo06";
 import { Demo07 } from "./examples/Demo07";
 import { Demo08 } from "./examples/Demo08";
 import { Demo09 } from "./examples/Demo09";
+import { Demo10 } from "./examples/Demo10";
 
 const App = () => {
   return (
@@ -21,7 +22,8 @@ const App = () => {
       {/* <Demo06 /> */}
       {/* <Demo07 /> */}
       {/* <Demo08 /> */}
-      <Demo09 />
+      {/* <Demo09 /> */}
+      <Demo10 />
     </>
   );
 };

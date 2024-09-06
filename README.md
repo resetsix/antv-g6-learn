@@ -240,6 +240,68 @@ const graph = new Graph({
 
 ### 无法根据 label 内容长度动态设置 node 宽度
 
+<details>
+<summary>官方回应</summary>
+
+> 目前 G6 5.0 还没提供这项能力，只能先自定义节点然后自适应。我后面评估下 G6 是否需要支持设置如 size: 'auto' 这种方式来自适应
+
+</details>
+
+<br/>
+
+<details>
+<summary>最初解决方法（不是很完美，只能针对 label 是纯中文的情况）</summary>
+
+```tsx
+node: {
+  style: {
+    size(d: any) {
+      const width = d.data.label.length * 14 + 30; 
+      const height = 30;
+      return [width, height];
+    },
+  },
+},
+```
+
+> `width =  label 字数 * 14 + 30`  
+
+> 解释：14 px是全局的 fontSize 大小，30 px是给 icon 和 padding 站位的空间，30这个值是页面直观看上去刚好比较合适的。
+
+</details>
+
+<br/>
+
+目前最新可行的解决方案：**计算文本在浏览器中的实际渲染宽度**
+
+```tsx
+// utils.ts
+export const getTextWidth = (
+    text: string,
+    font = "14px sans-serif"
+): number => {
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d");
+    if (context) {
+        context.font = font;
+        return context.measureText(text).width;
+    }
+    return 0;
+};
+
+```
+```tsx
+size(d: any) {
+  const labelWidth = getTextWidth(
+    d.id,
+    "14px sans-serif"
+  );
+  const width = labelWidth + 40; // 40px 用于图标和内边距
+  const height = 30;
+  return [width, height];
+},
+```
+
 ## 参考
 - [Antv-G6学习笔记-v4](https://github.com/puxiao/notes/blob/master/Antv-G6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)  
 - [Antv官网-v5](https://g6-next.antv.antgroup.com/)
