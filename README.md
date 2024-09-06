@@ -207,6 +207,14 @@ const graph = new Graph({
 
 **解决方案**：在 node 的**样式对象**中添加如下配置
 
+**过时方案**：
+
+</details>  
+
+
+<details>
+<summary>点击展开/关闭</summary>
+
 ```tsx
 const graph = new Graph({
   container: containerRef.current!,
@@ -220,6 +228,17 @@ const graph = new Graph({
   },
 })
 ```
+
+</details>
+<br/>
+
+以上方案还是会有偏差。
+
+**最新方案**：应该使用`portLinkToCenter: true`。[详情](https://g6-next.antv.antgroup.com/api/elements/nodes/base-node#portlinktocenter)
+
+---
+
+### 无法根据 label 内容长度动态设置 node 宽度
 
 ## 参考
 - [Antv-G6学习笔记-v4](https://github.com/puxiao/notes/blob/master/Antv-G6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)  
