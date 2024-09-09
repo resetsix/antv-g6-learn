@@ -4,7 +4,8 @@
   "private": true,
   "homepage": "https://resetsix.github.io/antv-g6-learn/",
   "dependencies": {
-    "@antv/g6": "^5.0.20",
+    "@ant-design/icons": "^5.4.0",
+    "@antv/g6": "^5.0.21",
     "@antv/g6-extension-react": "^0.1.5",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
