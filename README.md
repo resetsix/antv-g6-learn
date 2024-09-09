@@ -1,6 +1,10 @@
 ## a repository to learn antv/g6 demo
 
-- antv/g6 v5.0.20
+version update
+
+- antv/g6 v5.0.21
+
+- ~~antv/g6 v5.0.20~~
 
 - ~~antv/g6 v5.0.19~~
 
