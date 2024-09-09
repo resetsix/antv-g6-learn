@@ -1,107 +1,62 @@
 export const treeData = {
-  id: "Modeling Methods",
-  children: [
-    {
-      id: "Classification",
-      children: [
+    id: "根节点",
+    children: [
         {
-          id: "Logistic regression",
+            id: "一级节点1",
+            children: [
+                {
+                    id: "二级节点1二级节点1二级节点1二级节点1二级节点1-1",
+                    children: [
+                        { id: "三级节点1三级节点1三级节点1-1-1" },
+                        { id: "三级节点1-1-2" },
+                    ],
+                },
+                {
+                    id: "二级节点1-2",
+                    children: [
+                        { id: "三级节点1-2-1" },
+                        { id: "三级节点1-2-2" },
+                    ],
+                },
+            ],
         },
         {
-          id: "Linear discriminant analysis",
+            id: "一级节点2",
+            children: [
+                {
+                    id: "二级节点2-1",
+                    children: [
+                        { id: "三级节点2-1-1" },
+                        { id: "三级节点2-1-2" },
+                    ],
+                },
+                {
+                    id: "二级节点2-2",
+                    children: [
+                        { id: "三级节点2-2-1" },
+                        { id: "三级节点2-2-2" },
+                    ],
+                },
+            ],
         },
         {
-          id: "Rules",
+            id: "一级节点3",
+            children: [
+                {
+                    id: "二级节点3-1",
+                    children: [
+                        { id: "三级节点3-1-1" },
+                        { id: "三级节点3-1-2" },
+                    ],
+                },
+                {
+                    id: "二级节点3-2",
+                    children: [
+                        { id: "三级节点3-2-1" },
+                        { id: "三级节点3-2-2" },
+                    ],
+                },
+            ],
         },
-        {
-          id: "Decision trees",
-        },
-        {
-          id: "Naive Bayes",
-        },
-        {
-          id: "K nearest neighbor",
-        },
-        {
-          id: "Probabilistic neural network",
-        },
-        {
-          id: "Support vector machine",
-        },
-      ],
-    },
-    {
-      id: "Consensus",
-      children: [
-        {
-          id: "Models diversity",
-          children: [
-            {
-              id: "Different initializations",
-            },
-            {
-              id: "Different parameter choices",
-            },
-            {
-              id: "Different architectures",
-            },
-            {
-              id: "Different modeling methods",
-            },
-            {
-              id: "Different training sets",
-            },
-            {
-              id: "Different feature sets",
-            },
-          ],
-        },
-        {
-          id: "Methods",
-          children: [
-            {
-              id: "Classifier selection",
-            },
-            {
-              id: "Classifier fusion",
-            },
-          ],
-        },
-        {
-          id: "Common",
-          children: [
-            {
-              id: "Bagging",
-            },
-            {
-              id: "Boosting",
-            },
-            {
-              id: "AdaBoost",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: "Regression",
-      children: [
-        {
-          id: "Multiple linear regression",
-        },
-        {
-          id: "Partial least squares",
-        },
-        {
-          id: "Multi-layer feedforward neural network",
-        },
-        {
-          id: "General regression neural network",
-        },
-        {
-          id: "Support vector regression",
-        },
-      ],
-    },
-  ],
+    ],
 };

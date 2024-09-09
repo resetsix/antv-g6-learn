@@ -20,6 +20,7 @@ import { COLOR_ENUM } from "../constants";
 import { layoutAlgorithms } from "../layoutAlgorithms";
 import { getRandomIndex } from "../utils/getRandomIndex";
 import { getTextWidth } from "../utils/getTextWidth";
+import { processGraphData } from "../utils/processGraphData";
 // import { data } from "../data";
 
 register(ExtensionCategory.NODE, "dtNode", ReactNode);
@@ -31,26 +32,25 @@ export interface DeNodeProps {
         style: Record<string, any>;
     };
 }
-const flexStyle: React.CSSProperties = {
-    width: "100%",
-    minWidth: 60,
-    height: "100%",
-    paddingInlineStart: 6,
-    background: "#fff",
-    // padding: 4,
-    borderRadius: 6,
-    border: "1px solid gray",
-};
 
 const DtNode: React.FC<DeNodeProps> = ({ data }) => {
     return (
-        <Flex align="center" gap="small" style={flexStyle}>
+        <Flex
+            align="center"
+            gap="small"
+            style={{
+                // 使用 100% 会导致 edge 连接在 node 内部而不是边缘
+                // width: "100%",
+                height: "100%",
+                paddingInlineStart: 6,
+                color: "gray",
+                borderRadius: 6,
+                border: `1px solid ${data.data.color || "#9CA1B9"}`,
+            }}
+        >
             <LibraryFolder />
             <Typography.Text>{data.id}</Typography.Text>
         </Flex>
-        // <Card style={{ borderRadius: 2 }} styles={{ body: { padding: 0 } }}>
-        //   文本文本
-        // </Card>
     );
 };
 
@@ -84,9 +84,10 @@ export const Demo10: React.FC = () => {
                 autoResize: true,
                 // width: 800,
                 // height: 800,
-                data: treeToGraphData(treeData),
+                data: processGraphData(treeToGraphData(treeData)),
                 node: {
                     // type: (t) => (t.id === "node-0" ? "rect" : "dtNode"),
+                    // type: "rect",
                     type: "dtNode",
                     style: {
                         // size: [60, 20],
@@ -104,7 +105,7 @@ export const Demo10: React.FC = () => {
                         labelPlacement: "center",
                         labelText: (d) => d.id,
                         port: true,
-                        ports: [{ placement: "left" }, { placement: "right" }],
+                        ports: [{ placement: "right" }, { placement: "left" }],
                     },
                     state: {
                         selected: {
@@ -116,7 +117,6 @@ export const Demo10: React.FC = () => {
                         color: ["red", "green", "blue"],
                     },
                 },
-                // edge: { type: "cubic-vertical", style: { stroke: "red" } },
                 edge: {
                     type: "cubic-horizontal",
                     style: {
@@ -131,7 +131,7 @@ export const Demo10: React.FC = () => {
                     // type: antv-dagre combo-combined compact-box force-atlas2 circular concentric d3-force dagre dendrogram force fruchterman grid indented mds mindmap radial random
                     type: "compact-box",
                     // nodesep: 30,
-                    // ranksep: 40,
+                    // ranksep: 1,
                     direction: "LR",
                     getSide: (d: any) => {
                         return "right";
@@ -145,12 +145,18 @@ export const Demo10: React.FC = () => {
                     getVGap: function getVGap() {
                         return 10;
                     },
-                    getHGap: function getHGap() {
-                        return 140;
+                    getHGap: function getHGap(d: any) {
+                        return 50;
                     },
-                    // getWidth: function getWidth(d: any) {
-                    //     return 70;
-                    // },
+                    getWidth: function getWidth(d: any) {
+                        console.log(
+                            "d",
+                            getTextWidth(d.id, "14px sans-serif"),
+                            "end",
+                            getTextWidth(d.id, "14px sans-serif") - 50
+                        );
+                        return getTextWidth(d.id, "14px sans-serif") - 50;
+                    },
                 },
                 autoFit: "center",
                 // background: "#E8D6E8",
@@ -163,13 +169,13 @@ export const Demo10: React.FC = () => {
                 ],
                 plugins: [
                     { type: "grid-line", follow: true, key: "grid-line" },
-                    {
-                        type: "tooltip",
-                        key: "tooltip",
-                        enable: (event: IElementEvent) => {
-                            return event.targetType === "node";
-                        },
-                    },
+                    // {
+                    //     type: "tooltip",
+                    //     key: "tooltip",
+                    //     enable: (event: IElementEvent) => {
+                    //         return event.targetType === "node";
+                    //     },
+                    // },
                     {
                         type: "contextmenu",
                         key: "contextmenu",
@@ -203,7 +209,7 @@ export const Demo10: React.FC = () => {
             graphRef.current = graph;
             graph.render();
         }
-        console.log(treeData, treeToGraphData(treeData));
+        // console.log(treeData, treeToGraphData(treeData));
         // 销毁
         return () => graphRef.current?.destroy();
     }, []);

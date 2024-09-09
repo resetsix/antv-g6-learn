@@ -302,6 +302,51 @@ size(d: any) {
 },
 ```
 
+### 自定义节点的 edge 总是连接在 node 内部而不是边缘
+
+<details>
+<summary>效果图</summary>
+
+`width: "100%"` 或 `midWidth: "100%"` 会导致 edge 连接在 node 内部而不是边缘
+
+![edge-cross-node.png](./public/assets/edge-cross-node.png)
+
+移除`width: "100%"` 或 `midWidth:'100%'`后效果
+
+![edge-on-node.png](./public/assets/edge-on-node.png)
+
+</details>
+
+<br/>
+
+```tsx
+const DtNode: React.FC<DeNodeProps> = ({ data }) => {
+    return (
+        <Flex
+            align="center"
+            gap="small"
+            style={{
+                // 使用 100% 会导致 edge 连接在 node 内部而不是边缘
+                // width: "100%",
+                height: "100%",
+                paddingInlineStart: 6,
+                color: "gray",
+                borderRadius: 6,
+                border: `1px solid ${data.data.color || "#9CA1B9"}`,
+            }}
+        >
+            <LibraryFolder />
+            <Typography.Text>{data.id}</Typography.Text>
+        </Flex>
+    );
+};
+```
+分析：最开始以为是自定义节点`padding`导致的，但移除后仍然有这个问题。经过反复调试，发现是`width: "100%"` 或 `midWidth:'100%'`导致的。
+
+**解决方案**：移除掉`width: "100%"` 或 `midWidth:'100%'`。
+
+
+
 ## 参考
 - [Antv-G6学习笔记-v4](https://github.com/puxiao/notes/blob/master/Antv-G6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)  
 - [Antv官网-v5](https://g6-next.antv.antgroup.com/)
