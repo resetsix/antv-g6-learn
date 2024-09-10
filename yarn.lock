@@ -83,7 +83,7 @@
     resize-observer-polyfill "^1.5.1"
     throttle-debounce "^5.0.0"
 
-"@antv/component@^2.0.3":
+"@antv/component@^2.0.4":
   version "2.0.4"
   resolved "https://registry.npmjs.org/@antv/component/-/component-2.0.4.tgz#3e8267158882378020d892afca554afc45383d91"
   integrity sha512-1bqDP98gCZhgAK34SGjQk2LI0BoY+VPA3iO74hM+bjSug33V99baoB29ahO+E/upf/o0aiOhkYN/lM3zWKeCxg==
@@ -108,7 +108,7 @@
     gl-matrix "^3.4.3"
     tslib "^2.5.3"
 
-"@antv/g-canvas@^2.0.10":
+"@antv/g-canvas@^2.0.12":
   version "2.0.12"
   resolved "https://registry.npmjs.org/@antv/g-canvas/-/g-canvas-2.0.12.tgz#ba061b9275850a93dde713917af5ee1135a914fd"
   integrity sha512-VgdINi7KUqQePS7+iVqoKtvBg3+zbD+8Vmw2s+e6HdhM3fWBlbrIXIyZ+En+mVHYhLw6buPpW8wAsfNCija0bA==
@@ -196,7 +196,7 @@
     "@antv/g-lite" "2.0.9"
     tslib "^2.5.3"
 
-"@antv/g-plugin-dragndrop@^2.0.8":
+"@antv/g-plugin-dragndrop@^2.0.9":
   version "2.0.9"
   resolved "https://registry.npmjs.org/@antv/g-plugin-dragndrop/-/g-plugin-dragndrop-2.0.9.tgz#b9f99b6d112644101d2759a93ed3817190804ba5"
   integrity sha512-Hhmk0PAqIOsNzAUv015/129o/R34S/7s41xEkx8/d9ZdziJSLL01c3wHhwG9sGnTRnW8CHHChAh0tT+ygpmS6g==
@@ -242,24 +242,24 @@
     "@antv/g" "^6.0.12"
     "@antv/react-g" "^2.0.12"
 
-"@antv/g6@^5.0.20":
-  version "5.0.20"
-  resolved "https://registry.npmjs.org/@antv/g6/-/g6-5.0.20.tgz#8d11d8056be7c00f4c39667fff1318e8ed0562ae"
-  integrity sha512-BelR/YRfxI54aSlnIkmET2Tf8hDtIpaXNq9UNpaBkDUFRbr409cgfqFMk3JS7LCTsRODgBMpzx6sOUyE0cRvzA==
+"@antv/g6@^5.0.21":
+  version "5.0.21"
+  resolved "https://registry.npmjs.org/@antv/g6/-/g6-5.0.21.tgz#77cf22362f813ace5744cdac488112a39ad803f1"
+  integrity sha512-fYeCi2a7pBeN8KwvINgeNjYtl9G6BqDLHyhdlI0buMnTwamHP/mQyfjxna7mXjUdHzhUHExZ91UvOBgz+AvDRg==
   dependencies:
-    "@antv/component" "^2.0.3"
+    "@antv/component" "^2.0.4"
     "@antv/event-emitter" "^0.1.3"
-    "@antv/g" "^6.0.12"
-    "@antv/g-canvas" "^2.0.10"
-    "@antv/g-plugin-dragndrop" "^2.0.8"
+    "@antv/g" "^6.0.13"
+    "@antv/g-canvas" "^2.0.12"
+    "@antv/g-plugin-dragndrop" "^2.0.9"
     "@antv/graphlib" "^2.0.3"
     "@antv/hierarchy" "^0.6.13"
-    "@antv/layout" "^1.2.14-beta.6"
-    "@antv/util" "^3.3.7"
+    "@antv/layout" "1.2.14-beta.6"
+    "@antv/util" "^3.3.8"
     bubblesets-js "^2.3.3"
     hull.js "^1.0.6"
 
-"@antv/g@6.0.13", "@antv/g@^6.0.12", "@antv/g@^6.0.5":
+"@antv/g@6.0.13", "@antv/g@^6.0.12", "@antv/g@^6.0.13", "@antv/g@^6.0.5":
   version "6.0.13"
   resolved "https://registry.npmjs.org/@antv/g/-/g-6.0.13.tgz#5776b54ec1b0cd488a2d4a4f4b4a7bbc4deada53"
   integrity sha512-wW5mZOs5sqsXJ0RHfwrLkskrLdJu+nfQE7p8RfwTHy48KVyO33Lm6hyu1r8Wx/9yeSxlZQE6gHmjjM9U/1V8lA==
@@ -281,7 +281,7 @@
   resolved "https://registry.npmjs.org/@antv/hierarchy/-/hierarchy-0.6.13.tgz#7565f5f0061cb1563d21162fb74aaa25c48cbbcc"
   integrity sha512-gBC0bYXyBVrprWyR0hqINNYfeovxdIcKBAR7x6DfNyN1Gc3hGaSo0wif6Lrv/aWVHz17FeQlVsf8rgEx343FHg==
 
-"@antv/layout@^1.2.14-beta.6":
+"@antv/layout@1.2.14-beta.6":
   version "1.2.14-beta.6"
   resolved "https://registry.npmjs.org/@antv/layout/-/layout-1.2.14-beta.6.tgz#95f2b0a7a864eb339d541d1fc746e8471fbfd7a3"
   integrity sha512-evrDECF20yebz46Vqcd9tEXCrELN/61cSCe/xD3XFBrRaOUVVDatKgr9JNHkMVHJcL1sXTa9xfGaWh4WUj6/yg==
@@ -320,7 +320,7 @@
     color-string "^1.5.5"
     fecha "^4.2.1"
 
-"@antv/util@^3.3.2", "@antv/util@^3.3.5", "@antv/util@^3.3.7":
+"@antv/util@^3.3.2", "@antv/util@^3.3.5", "@antv/util@^3.3.7", "@antv/util@^3.3.8":
   version "3.3.8"
   resolved "https://registry.npmjs.org/@antv/util/-/util-3.3.8.tgz#f16bd3cfb033f960ed3f1c12ab2ea6b1f8c695d0"
   integrity sha512-RO2vmp84adfZn5HVXuNtHr35PRWthw4oCUv0hn9DmEWwOJSeU6NtDCEg9KvU8sH2bJaS3fe/cppNSVy2L8tOaw==
