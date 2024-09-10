@@ -8,9 +8,9 @@ version update
 
 - ~~antv/g6 v5.0.19~~
 
-## 遇到问题
+## Q&A
 
-### antv/g6 源码映射指向不存在路径
+### Q1:antv/g6 源码映射指向不存在路径
 
 
 在项目启动编译时提示 warning 信息，不影响项目正常运行
@@ -34,7 +34,7 @@ GENERATE_SOURCEMAP=false
 
 ---
 
-### 手动配置色板颜色不生效
+### Q2:手动配置色板颜色不生效
 
 色板作用：当 node 数量庞大时，更方便的为 node 配置颜色。
 
@@ -68,7 +68,7 @@ const graph = new Graph({
 
 ---
 
-### grid-line 插件不生效
+### Q3:grid-line 插件不生效
 
 ```tsx
 {
@@ -105,7 +105,7 @@ const graph = new Graph({
 
 **解决方案**：给**父容器**设置宽高
 
-### 关于状态样式使用
+### Q4:关于状态样式使用
 
 G6 预设的状态包括：
 
@@ -122,7 +122,7 @@ G6 中的状态类型是一个字符串数组(string[])，即一个元素可以*
 
 --- 
 
-### 无法使用树图布局
+### Q5:无法使用树图布局
 
 v5合并了图和树图，但是无法使用树图布局。
 
@@ -164,7 +164,7 @@ plugin: {
 ```
 ---
 
-### tooltip插件启用 enable 后自动移除失效
+### Q6:tooltip插件启用 enable 后自动移除失效
 
 假设需求：hover或click时只让node有提示，edge没有提示。
 
@@ -187,7 +187,7 @@ const graph = new Graph({
 
 ---
 
-### 三次贝塞尔曲线-水平（edge）没有连接在 node 的边缘中心
+### Q7:三次贝塞尔曲线-水平（edge）没有连接在 node 的边缘中心
 
 <details>
 <summary>点击展开/关闭</summary>
@@ -242,7 +242,7 @@ const graph = new Graph({
 
 ---
 
-### 无法根据 label 内容长度动态设置 node 宽度
+### Q8:无法根据 label 内容长度动态设置 node 宽度
 
 <details>
 <summary>官方回应</summary>
@@ -306,7 +306,7 @@ size(d: any) {
 },
 ```
 
-### 自定义节点的 edge 总是连接在 node 内部而不是边缘
+### Q9:自定义节点的 edge 总是连接在 node 内部而不是边缘
 
 <details>
 <summary>效果图</summary>
