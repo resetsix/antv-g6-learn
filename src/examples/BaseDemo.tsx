@@ -3,7 +3,7 @@ import type React from "react";
 import { useEffect, useRef } from "react";
 import { treeData } from "../__mock__/treeData";
 
-export const Demo14: React.FC = () => {
+export const BaseDemo: React.FC = () => {
     const contsinerRef = useRef<HTMLDivElement | null>(null);
     const graphRef = useRef<Graph | null>(null);
 

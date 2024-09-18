@@ -170,7 +170,7 @@ export const Demo14: React.FC = () => {
       layout: {
         type: "antv-dagre",
         nodesep: 6,
-        ranksep: -20,
+        ranksep: -30,
       },
       behaviors: [
         {
