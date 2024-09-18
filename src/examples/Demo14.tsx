@@ -314,7 +314,7 @@ export const Demo14: React.FC = () => {
       <div style={{ marginBlockEnd: 16 }}>
         <button onClick={handleUpdate}>更新边样式</button>
         <button onClick={handleAutoFit}>适配</button>
-        <button onClick={handleZoom}>1:1</button>
+        <button onClick={handleZoom}>重置缩放</button>
       </div>
       <div ref={containerRef} style={{ width: "100%", height: "85vh" }} />
     </>
