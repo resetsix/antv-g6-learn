@@ -131,6 +131,7 @@ export const Demo14: React.FC = () => {
             const height = 36;
             return [width, height];
           },
+          dx: -90,
           portLinkToCenter: true,
           component: ({ ...props }) => <DtNode data={props} />,
           // labelPlacement: "center",
