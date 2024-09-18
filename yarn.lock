@@ -242,10 +242,10 @@
     "@antv/g" "^6.0.12"
     "@antv/react-g" "^2.0.12"
 
-"@antv/g6@^5.0.21":
-  version "5.0.21"
-  resolved "https://registry.npmjs.org/@antv/g6/-/g6-5.0.21.tgz#77cf22362f813ace5744cdac488112a39ad803f1"
-  integrity sha512-fYeCi2a7pBeN8KwvINgeNjYtl9G6BqDLHyhdlI0buMnTwamHP/mQyfjxna7mXjUdHzhUHExZ91UvOBgz+AvDRg==
+"@antv/g6@^5.0.22":
+  version "5.0.22"
+  resolved "https://registry.npmjs.org/@antv/g6/-/g6-5.0.22.tgz#1ab91940e8eefa0f8134e15f52d953dc57fe7e60"
+  integrity sha512-aCi3PZcBr69kzeRTYpRsVXDaPse6CnjGmSISS6kyUimzMH6j84+Xetqv0UvE2upWw+i1tFy/+HXmjsUa0EI9sg==
   dependencies:
     "@antv/component" "^2.0.4"
     "@antv/event-emitter" "^0.1.3"
@@ -254,7 +254,7 @@
     "@antv/g-plugin-dragndrop" "^2.0.9"
     "@antv/graphlib" "^2.0.3"
     "@antv/hierarchy" "^0.6.13"
-    "@antv/layout" "1.2.14-beta.6"
+    "@antv/layout" "^1.2.14-beta.7"
     "@antv/util" "^3.3.8"
     bubblesets-js "^2.3.3"
     hull.js "^1.0.6"
@@ -281,10 +281,10 @@
   resolved "https://registry.npmjs.org/@antv/hierarchy/-/hierarchy-0.6.13.tgz#7565f5f0061cb1563d21162fb74aaa25c48cbbcc"
   integrity sha512-gBC0bYXyBVrprWyR0hqINNYfeovxdIcKBAR7x6DfNyN1Gc3hGaSo0wif6Lrv/aWVHz17FeQlVsf8rgEx343FHg==
 
-"@antv/layout@1.2.14-beta.6":
-  version "1.2.14-beta.6"
-  resolved "https://registry.npmjs.org/@antv/layout/-/layout-1.2.14-beta.6.tgz#95f2b0a7a864eb339d541d1fc746e8471fbfd7a3"
-  integrity sha512-evrDECF20yebz46Vqcd9tEXCrELN/61cSCe/xD3XFBrRaOUVVDatKgr9JNHkMVHJcL1sXTa9xfGaWh4WUj6/yg==
+"@antv/layout@^1.2.14-beta.7":
+  version "1.2.14-beta.8"
+  resolved "https://registry.npmjs.org/@antv/layout/-/layout-1.2.14-beta.8.tgz#48d3a16d7148138931317c0aee634da2ab64f079"
+  integrity sha512-/zP8pRz28ahYSVk4fsfhl3T1X3FvCAi7Q3YQ8H2LZEvTojYYrJtO2AXFsojehU6HGVnIAq+QIjd3He6ot8+gvA==
   dependencies:
     "@antv/event-emitter" "^0.1.3"
     "@antv/graphlib" "^2.0.0"

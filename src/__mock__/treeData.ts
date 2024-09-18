@@ -15,21 +15,21 @@ function generateMockData(): TreeNode {
             children: [],
         };
 
-        for (let j = 1; j <= 2; j++) {
-            const level2: TreeNode = {
-                id: `二级节点${i}-${j}`,
-                children: [],
-            };
+        // for (let j = 1; j <= 2; j++) {
+        //     const level2: TreeNode = {
+        //         id: `二级节点${i}-${j}`,
+        //         children: [],
+        //     };
 
-            for (let k = 1; k <= 2; k++) {
-                const level3: TreeNode = {
-                    id: `三级节点${i}-${j}-${k}`,
-                };
-                level2.children!.push(level3);
-            }
+        //     for (let k = 1; k <= 2; k++) {
+        //         const level3: TreeNode = {
+        //             id: `三级节点${i}-${j}-${k}`,
+        //         };
+        //         level2.children!.push(level3);
+        //     }
 
-            level1.children!.push(level2);
-        }
+        //     level1.children!.push(level2);
+        // }
 
         mockData.children!.push(level1);
     }

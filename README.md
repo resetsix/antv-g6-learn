@@ -2,7 +2,9 @@
 
 version update
 
-- antv/g6 v5.0.21
+- antv/g6 v5.0.22
+
+- ~~antv/g6 v5.0.21~~
 
 - ~~antv/g6 v5.0.20~~
 
