@@ -14,6 +14,7 @@ import { Demo11 } from "./examples/Demo11";
 import { Demo12 } from "./examples/Demo12";
 import { Demo13 } from "./examples/Demo13";
 import { Demo14 } from "./examples/Demo14";
+import { Demo15 } from "./examples/Demo15";
 
 const App = () => {
   return (
@@ -31,7 +32,8 @@ const App = () => {
       {/* <Demo11 /> */}
       {/* <Demo12 /> */}
       {/* <Demo13 /> */}
-      <Demo14 />
+      {/* <Demo14 /> */}
+      <Demo15 />
     </>
   );
 };
